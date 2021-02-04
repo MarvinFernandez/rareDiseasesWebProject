@@ -1,0 +1,20 @@
+{% extends "rareDiseasesWebApp/base.html" %}
+
+
+{% block content %}
+
+
+<div class="contactforms" >
+    {% if "valid" in request.GET %}
+
+    <p style="color: cornsilk;"> information sent correctly, thanks</p>
+
+    {% endif %}
+    <form action="" method="POST" style="text-align: center;">
+        {% csrf_token %}
+        <table style="color: cornsilk; margin: 20px auto;">{{miformulario.as_table}}</table>
+        <input class="btnSend" type="submit" value="Send" style="width:180px">
+    </form>
+</div>
+
+{% endblock %}

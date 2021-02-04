@@ -1,0 +1,56 @@
+
+{% extends "finder/finder.html" %}
+
+{% load static %}
+
+{% block search_bar %}
+<div class="container" >
+    <form  method="GET" >
+
+        <input class="searchbox" style="width: 30em; margin-top: 2em; " type="text" placeholder="Disease..."  name="query_Box" value="{{request.GET.query_Box}}">
+        <input class="btnBuscador" type="submit" value="Search">
+
+    </form>
+</div>  
+{% endblock search_bar %} 
+
+{% block query_results %}
+    <section class="page-section clearfix">
+        <h2 class="page-section">
+            <div class="container">
+    
+                {% if disease_Results %}
+    
+                    <p style="color: cornsilk; font-size: .7em;">Found {{disease_Results|length}}  elements related to: <strong style="font-size: .9em;">{{query}}</strong></p>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th><th>Affected system</th><th>Prevalence</th>
+                            </tr>
+                        </thead>
+                        
+                        {% for diseaseDB in disease_Results %}
+                            <tr>
+                                <td>
+                                    <a href="{% url 'DiseasesTemplate' diseaseDB.iddisease %}"class="linksTables">
+                                        {{diseaseDB.diseasename}}
+                                    </a>
+                                </td>
+                                <td>{{diseaseDB.affectedsystem}}</td>
+                                <td>{{diseaseDB.prevalence}}</td>
+                            </tr>
+                        {% endfor %}
+                        
+                    </table>
+                    
+                {% else %}
+    
+                    <p>No related item found</p>
+    
+                {% endif %}
+            </div>
+        </h2>    
+    </section>    
+
+{% endblock query_results %}  

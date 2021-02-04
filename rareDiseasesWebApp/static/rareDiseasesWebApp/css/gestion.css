@@ -1,0 +1,459 @@
+body {
+  font-family: 'Lora';
+  background: linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url("../img/Rare_Disease_Icon.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'Raleway';
+}
+
+p {
+  line-height: 1.75;
+}
+
+table {
+  background-color:rgb(145, 167, 152);
+  border-collapse: collapse;
+  text-align: left;
+  width: 80%;
+}
+table thead{
+  cursor: pointer;
+  background-color: rgba(24, 64, 8);
+  border-bottom: solid 0.18em black;
+}
+table th{
+  padding: 0.8em;
+  color:cornsilk;
+  width: 60%;
+}
+table td{
+  padding: 0.8em;
+  color:black;
+  width: 60%;
+}
+table tr:nth-child(even){
+  background-color: rgb(175, 190, 165);
+}
+table tr:hover td{
+  background-color: rgb(93, 121, 82);
+  color:cornsilk;
+}
+
+.text-faded {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.site-heading {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  text-transform: uppercase;
+  line-height: 1;
+  font-family: 'Raleway';
+}
+
+.site-heading .site-heading-upper {
+  display: block;
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.site-heading .site-heading-lower {
+  font-size: 5rem;
+  font-weight: 100;
+  line-height: 4rem;
+}
+
+.page-section {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.section-heading {
+  text-transform: uppercase;
+}
+
+.section-heading .section-heading-upper {
+  display: block;
+  font-size: 1rem;
+  font-weight: 800;
+  padding-bottom:.5rem;
+
+}
+
+.section-heading .section-heading-lower {
+  display: block;
+  font-size: 3rem;
+  font-weight: 100;
+}
+
+
+.section-heading .section-heading-under {
+  display: block;
+  font-size: 1rem;
+  text-transform: none;
+  font-weight: 300;
+  margin-top:.5rem;
+}
+
+.bg-faded {
+  background-color: rgba(255, 255, 255, 0.85);
+}
+
+#mainNav {
+  background-color: rgba(24, 64, 8);
+  font-family: 'Raleway';
+}
+
+#mainNav .navbar-brand {
+  color: #ffffff;
+}
+
+#mainNav .navbar-nav .nav-item .nav-link {
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 800;
+}
+
+#mainNav .navbar-nav .nav-item.active .nav-link {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+@media (min-width: 992px) {
+  #mainNav .navbar-nav .nav-item .nav-link {
+    font-size: 0.9rem;
+  }
+  #mainNav .navbar-nav .nav-item .nav-link:hover {
+    color: rgba(255, 255, 255, 0.4);
+    text-decoration: underline;
+  }
+  #mainNav .navbar-nav .nav-item.active .nav-link:hover {
+    color: #ffffff;
+    text-decoration: underline;
+  }
+}
+
+.btn-xl {
+  font-weight: 700;
+  font-size: 0.8rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.intro {
+  position: relative;
+}
+
+@media (min-width: 992px) {
+  .intro .intro-img {
+    width: 75%;
+    float: left;
+  }
+  .intro .intro-text {
+    left: 600;
+    width: 60%;
+    margin-top: 3rem;
+    background-color: rgba(24, 64, 8);
+    color: cornsilk;
+    position: absolute;
+  }
+  .intro .intro-text .intro-button {
+    width: 100%;
+    left: 0;
+    position: absolute;
+    bottom: -2rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .intro .intro-text {
+    width: 45%;
+  }
+}
+
+.cta {
+  padding-top: 0rem;
+  padding-bottom: 2rem;
+}
+
+.cta .cta-inner {
+  position: relative;
+  padding: 3rem;
+  margin: 0.5rem;
+  background-color: rgba(24, 64, 8);
+  color: cornsilk;
+}
+
+.cta .cta-inner:before {
+  border-radius: 0.5rem;
+  content: '';
+  position: absolute;
+  top: -0.5rem;
+  bottom: -0.5rem;
+  left: -0.5rem;
+  right: -0.5rem;
+  border: 0.45rem solid rgba(255, 255, 255, 0.85);
+}
+
+.cta .cta-innerv {
+  position: relative;
+  padding: 3rem;
+  margin: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.85);
+}
+
+@media (min-width: 992px) {
+  .about-heading .about-heading-img {
+    position: relative;
+    z-index: 0;
+  }
+  .about-heading .about-heading-content {
+    margin-top: -5rem;
+    position: relative;
+    z-index: 1;
+  }
+}
+
+@media (min-width: 992px) {
+  .product-item .product-item-title {
+    position: relative;
+    z-index: 1;
+    margin-bottom: -3rem;
+  }
+  .product-item .product-item-img {
+    position: relative;
+    z-index: 0;
+    max-width: 60vw;
+  }
+  .product-item .product-item-description {
+    position: relative;
+    z-index: 1;
+    margin-top: -3rem;
+    max-width: 50vw;
+  }
+}
+
+
+
+@media (min-width: 992px) {
+  .list-hours {
+    width: 50%;
+    font-size: 1.1rem;
+  }
+}
+
+.address strong {
+  font-size: 1.2rem;
+}
+
+.footer {
+   background-color: rgba(24, 64, 8, 0.8);
+}
+
+
+
+.btn {
+  box-shadow: 0px 3px 3px 0px rgba(33, 37, 41, 0.1);
+}
+
+
+
+.font-weight-light {
+  font-weight: 100 !important;
+}
+
+.mbtm{
+  padding-top: 5rem;
+}
+
+.mbt{
+  padding-top: 2rem;
+}
+
+.mbt1{
+  padding-top: 1.25rem;
+}
+
+a.link{
+  color: rgba(255, 255, 255, 0.7);
+}
+
+a.link:hover{
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.section-content{
+  font-family: 'Lora' !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 28px !important;
+}
+
+ul.errorlist{
+  padding-top: .75rem;
+  font-style: italic;
+  color: red;
+}
+
+.linksCategories{
+  color: white !important;
+  text-decoration: none;
+}
+
+.linksCategories:hover{
+  text-decoration: underline;
+}
+.linksTables{
+  color: black!important;
+  text-decoration: none;
+}
+
+.linksTables:hover{
+  text-decoration: underline;
+  color:cornsilk!important;
+}
+
+.menutables{
+  list-style: none;
+  padding: 10;
+  padding-top: 1.2em;
+  font-weight: 200;
+  width: 40%;
+  margin: auto;
+  margin-left: 27em;
+}
+
+.menutables li{
+  display: inline-block;
+  text-align: center;
+}
+
+.menutables li a{
+  text-decoration: none;
+  color: cornsilk;
+  padding: 1rem;
+  display: block;
+}
+.menutables .menu-item.active {
+  font-weight: 800;
+  text-decoration: underline;
+}
+.menutables li a:hover{
+  color: #ffffff;
+  font-weight: 800;
+}
+
+.urltable{
+  margin: auto;
+  width: 100%;
+}
+.resourcetable{
+  margin: auto;
+  width: 70%;
+}
+
+.contactforms{
+  margin: 10px auto;
+  background-color: rgba(75, 218, 19, 0);
+  width: 50%;
+  border-radius: 40px;
+}
+
+.contactforms td{
+  padding: 0.8em;
+  color:black;
+  width: 60%;
+}
+.contactforms tr:nth-child(even){
+  background-color: rgba(175, 190, 165, 0);
+}
+.contactforms tr:hover td{
+  background-color: rgba(2, 5, 1, 0);
+  color:cornsilk;
+}
+
+.box{
+ position: relative;
+ margin-top: 10em;
+ margin-bottom: 7rem;
+ margin-left: 50%;
+ align-items: center;
+ justify-content: center;
+ transform: translate(-50%, -40%);
+ background-color:  none;
+ display: flex;
+ padding: 10px;
+ border-radius: 40px;
+ height: 10em;
+}
+.searchbox{
+  border: solid cornsilk;
+  background: rgb(42, 87, 24);
+  border-radius: 40px;
+  height: 50px;
+  outline: none;
+  color: cornsilk;
+  font-style: 3em;
+  line-height: 1em;
+  width: 60em;
+  text-align: center;
+}
+
+.btnSend{
+  border-radius: 20px;
+  border-width: 2px;
+  outline: none;
+  border: solid rgb(42, 87, 24);
+  text-align: center;
+  font-weight: 800;
+  color:  rgb(42, 87, 24);
+  background-color: cornsilk;
+  height: 40px;
+  width: 17em;
+}
+
+.botonBuscador{
+  position: relative;
+  border-radius: 40px;
+  border-width: 4px;
+  outline: none;
+  border: solid rgb(42, 87, 24);
+  margin: auto;
+  margin-top: 1em;
+  margin-left: 21em; 
+  text-align: center;
+  font-weight: 800;
+  color:  rgb(42, 87, 24);
+  background-color: cornsilk;
+  height: 40px;
+  width: 17em;
+}
+
+.btnBuscador{
+  background-color: cornsilk;
+  border-radius: 20px;
+  border-width: 4px;
+  outline: none;
+  border: solid rgb(42, 87, 24);
+  height: 3em;
+  width: 5.3em;
+  text-align: center;
+  font-weight: 800;
+  color:  rgb(42, 87, 24);
+}
+
+.btnBuscador:hover, .botonBuscador:hover, .btnSend:hover{
+  color: rgb(42, 87, 24);
+  font-weight: 100;
+}
+.btnBuscador:active, .botonBuscador:active, .btnSend:active{
+  color: #7c7c7c;
+  background-color: cornsilk;
+  border: cornsilk;
+}

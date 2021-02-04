@@ -1,0 +1,29 @@
+{% extends "services/services.html" %}
+
+{% block TableView %}
+
+<section class="page-section clearfix">
+    <h2 class="page-section">
+      <div class="container">
+        <table style="margin: auto;">
+            <thead>
+                <tr>
+                    <th>Type</th><th>Description</th>
+                </tr>
+            </thead>
+            {% for resource in resourcestypeDB %}
+              <tr>
+                <td>
+                  <a href="{% url 'ResourcestypesTemplate' resource.idtype %}"class="linksTables">
+                    {{resource.Type}}
+                  </a>
+                </td>
+                <td>{{resource.description}}</td>
+              </tr>
+            {% endfor %}  
+        </table>
+      </div>
+    </h2>    
+  </section>   
+
+{% endblock TableView %} 

@@ -1,0 +1,31 @@
+{% extends "services/services.html" %}
+
+{% block TableView %}
+
+<section class="page-section clearfix">
+    <h2 class="page-section">
+      <div class="urltable">
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th><th>Language</th><th>Location</th><th>Address</th>
+                </tr>
+            </thead>
+            {% for urlData in urlDB %}
+              <tr>
+                <td>{{urlData.idurl}}</td>
+                <td>{{urlData.language}}</td>
+                <td>{{urlData.location}}</td>
+                <td>
+                  <a href="{{urlData.address}}"class="linksTables">
+                    {{urlData.address}}
+                  </a>
+                </td>
+              </tr>
+            {% endfor %}  
+        </table>
+      </div>
+    </h2>    
+  </section>   
+
+{% endblock TableView %} 

@@ -1,0 +1,76 @@
+{% extends "rareDiseasesWebApp/base.html" %}
+
+{% block content %}
+
+    <!-- Description -->
+    <section class="page-section cta">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-9 mx-auto">
+                    <div class="cta-inner text-center rounded">
+                        <h2 class="section-heading mb-4">
+                            <span class="section-heading-lower">{{resource.name}}</span>
+                        
+                        {% for resourcestypeitem in resourcestype %}
+                        <span class="section-heading-upper">
+                                {{resourcestypeitem.Type}}
+                            </span>
+                        </h2>
+                            <p class="mb-0"> {{resourcestypeitem.description}}</p>
+                        {% endfor %}
+                        
+                        <div style="text-align: center; font-size: 0.8em;">
+                            <p></p>
+                            <span style="font-size: 1.1em;">Finality</span> : {{resource.finality}} &nbsp;&nbsp;
+                            <span style="font-size: 1.1em;">Price</span> : {{resource.price}} &nbsp;&nbsp;
+                            <span style="font-size: 1.1em;">Access</span> : {{resource.access}} &nbsp;&nbsp;
+                            <span style="font-size: 1.1em;">ID</span> : {{resource.idresources}}
+            
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div style="width: 75%; margin: auto; text-align: left; color: white;">
+        {{urlsobjets|length}}
+        {% for resourcestypeitem in resourcestype %}
+                            <a href="{% url 'ResourcestypesTemplate' resourcestypeitem.idtype %}"class="linksCategories">
+                                {{resourcestypeitem.Type}}
+                            </a>
+            {% endfor %}
+         resource found 
+    </div>
+    
+    <!-- Resources -->
+    {% for urlitem in urlsobjets %}
+
+    <section class="page-section clearfix">
+            
+        <div class="container">
+            <div class="intro">
+            
+                <h2 class="section-heading mb-4" >
+                    <a href="{{urlitem.address}}"class="linksTables">
+                        <span class="section-heading-upper" style="font-size: 0.8em; color: white;">{{urlitem.address}}</span>
+                    </a>
+                        <span class="section-heading-lower" style="font-size: 0.5em">{{urlitem.language}}</span>
+                </h2>
+            
+                <div style="text-align: left">
+
+                    Language : {{urlitem.language}} &nbsp;&nbsp;
+                    Location : {{urlitem.location}} &nbsp;&nbsp;
+                    <p> ID : {{urlitem.idurl}}</p>
+    
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+    {% endfor %}
+
+{% endblock %}

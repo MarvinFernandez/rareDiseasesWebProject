@@ -1,0 +1,20 @@
+
+{% extends "rareDiseasesWebApp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+    {% block search_bar %}
+        <div class="box">
+            <form action="results/" method="GET">
+        
+                <input type="text" class="searchbox" placeholder="Disease..."  name="query_Box" value="{{request.GET.query_Box}}">
+                <input class="botonBuscador" type="submit" value="Find ">
+            </form>
+        </div>  
+    {% endblock search_bar %}   
+    {% block query_results %} 
+    {% endblock query_results %}
+
+{% endblock %}

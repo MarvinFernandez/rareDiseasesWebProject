@@ -1,0 +1,61 @@
+{% extends "rareDiseasesWebApp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+    <!-- Description -->
+    <section class="page-section cta">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-9 mx-auto">
+                    <div class="cta-inner text-center rounded">
+                        <h2 class="section-heading mb-4">
+                            <span class="section-heading-lower">{{resourcestype.Type}}</span>
+                        </h2>
+                        <p class="mb-0">{{resourcestype.description}}</p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div style="width: 75%; margin: auto; text-align: left; color: white;">
+        {{resources|length}} resources found
+    </div>
+
+    <!-- Resources -->
+    {% for resource in resources %}
+
+        <section class="page-section clearfix">
+            
+            <div class="container">
+                <div class="intro">
+                
+                    <h2 class="section-heading mb-4" >
+                        <a href="{% url 'ResourceTemplate' resource.idresources %}"class="linksTables">
+                            <span class="section-heading-upper" style="font-size: 0.8em; color: white;">
+                                {{resource.name}}
+                            </span>
+                        </a>
+                        <span class="section-heading-lower" style="font-size: 0.5em">{{resource.name}}</span>
+                    </h2>
+                
+                    <div style="text-align: left">
+
+                        Finality : {{resource.finality}} &nbsp;&nbsp;
+                        Price : {{resource.price}} &nbsp;&nbsp;
+                        Access : {{resource.access}}
+                        <p>{{resource.idresources}}</p>
+        
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+    {% endfor %}
+
+{% endblock %}

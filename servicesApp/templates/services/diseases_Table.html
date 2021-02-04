@@ -1,0 +1,34 @@
+{% extends "services/services.html" %}
+
+{% block TableView %}
+
+<section class="page-section clearfix">
+    <h2 class="page-section">
+      <div class="container">
+        <table style="margin: auto;">
+            <thead>
+                <tr>
+                  <th>ID</th><th>Name</th><th>Prevalence</th><th>Affected system</th><th>Treatment</th><th>Diagnosis</th><th>Description</th>
+                </tr>
+            </thead>
+            {% for disease in diseasesDB %}
+              <tr>
+                <td>{{disease.iddisease}}</td>
+                <td>
+                  <a href="{% url 'DiseasesTemplate' disease.iddisease %}"class="linksTables">
+                  {{disease.diseasename}}
+                  </a>
+                </td>
+                <td>{{disease.prevalence}}</td>
+                <td>{{disease.affectedsystem}}</td>
+                <td>{{disease.treatment}}</td>
+                <td>{{disease.diagnosis}}</td>
+                <td>{{disease.description}}</td>
+              </tr>
+            {% endfor %}  
+        </table>
+      </div>
+    </h2>    
+  </section>   
+
+{% endblock TableView %} 
