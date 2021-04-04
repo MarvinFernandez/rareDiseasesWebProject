@@ -8,6 +8,10 @@
     {% if "valid" in request.GET %}
 
     <p style="color: cornsilk;"> information sent correctly, thanks</p>
+    {% endif %}
+    {% if "nonvalid" in request.GET %}
+
+    <p style="color: cornsilk;"> information not sent correctly, sorry</p>
 
     {% endif %}
     <form action="" method="POST" style="text-align: center;">

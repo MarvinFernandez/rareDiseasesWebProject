@@ -8,17 +8,19 @@
         <table style="margin: auto;">
             <thead>
                 <tr>
-                    <th>Type</th><th>Description</th>
+                  <th>Description</th><th>Type</th><th>#</th>
                 </tr>
             </thead>
             {% for resource in resourcestypeDB %}
               <tr>
+                <td>{{resource.description}}</td>
                 <td>
                   <a href="{% url 'ResourcestypesTemplate' resource.idtype %}"class="linksTables">
                     {{resource.Type}}
                   </a>
                 </td>
-                <td>{{resource.description}}</td>
+                
+                <td>{{resource.idtype}}</td>
               </tr>
             {% endfor %}  
         </table>

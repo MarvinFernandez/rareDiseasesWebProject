@@ -39,7 +39,7 @@
             <a class="nav-link text-uppercase text-expanded" href="{% url 'Home' %}">Home</a>
           </li>
           <li class="nav-item {% if request.path|slice:':13' == '/servicesApp/'%}active{% endif %} px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="{% url 'Services' %}">Services</a>
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'Services' %}">Boards</a>
           </li>
           <li class="nav-item {% if request.path|slice:':9' == '/browser/'%}active{% endif %} px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="{% url 'Browser' %}">Browser</a>
@@ -48,7 +48,7 @@
             <a class="nav-link text-uppercase text-expanded" href="{% url 'News' %}">News</a>
           </li>       
           <li class="nav-item {% if request.path|slice:':9' == '/contact/'%}active{% endif %} px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="{% url 'Contacto' %}">Contact</a>
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'Contacto' %}">contact us</a>
           </li>   
         </ul>
       </div>

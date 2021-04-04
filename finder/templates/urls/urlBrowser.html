@@ -1,0 +1,13 @@
+{% extends "finder/browser.html" %}
+
+{% load static %}
+
+{% block search_bar %}
+        <div class="box">
+            <form action="results/" method="GET">
+        
+                <input type="text" class="searchbox" placeholder="Url..."  name="query_Box" value="{{request.GET.query_Box}}">
+                <input class="botonBuscador" type="submit" value="Find ">
+            </form>
+        </div>  
+{% endblock search_bar %} 

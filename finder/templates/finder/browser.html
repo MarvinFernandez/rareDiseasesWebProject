@@ -1,0 +1,53 @@
+{% extends "rareDiseasesWebApp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+    <!-- Optionbar -->
+    <ul class="menutables">
+        <li class="menu-item {% if request.path|slice:':19' == '/browser/diseaseBw/'%}active{% endif %}">
+        <a href="{% url 'DiseaseBw' %}">diseases</a>
+        </li>    
+        <li class="menu-item {% if request.path|slice:':20' == '/browser/resourceBw/'%}active{% endif %}">
+            <a href="{% url 'ResourceBw' %}">resources</a>
+        </li>   
+        <li class="menu-item {% if request.path|slice:':25' == '/browser/resourcestypeBw/'%}active{% endif %}">
+        <a href="{% url 'ResourcestypeBw' %}">resources types</a>
+        </li>   
+        <li class="menu-item {% if request.path|slice:':15' == '/browser/urlBw/'%}active{% endif %}">
+        <a href="{% url 'UrlBw' %}">urls</a>
+        </li>   
+    </ul>
+
+    {% block search_bar %} 
+
+  <!-- Message -->
+  <section class="page-section cta">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-9 mx-auto">
+          <div class="cta-inner text-center rounded">
+            <h2 class="section-heading mb-4">
+              <span class="section-heading-upper">Projects <span style="font-size: 1.2em;">2</span></span>
+              <span class="section-heading-lower">Rare Diseases</span>
+            </h2>
+              <p class="mb-0">
+                Patients affected by this type of disease see altered both their physical and mental capacities, 
+                influencing their sensory and behavioral capacities. The main problems that patients have to face 
+                are multiple, from diagnosis to treatment. Because they are rare diseases, resources (funding) for 
+                research on these are often scarce. For this reason, knowing all the existing resources can be helpful 
+                for researchers, practitioners and patients.
+              </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    {% endblock search_bar %}   
+
+    {% block query_results %} 
+    {% endblock query_results %}
+
+{% endblock %}

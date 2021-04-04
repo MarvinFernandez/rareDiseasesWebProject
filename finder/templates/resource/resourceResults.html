@@ -1,0 +1,57 @@
+
+{% extends "finder/browser.html" %}
+
+{% load static %}
+
+{% block search_bar %}
+<div class="container" >
+    <form  method="GET" >
+
+        <input class="searchbox" style="width: 30em; margin-top: 2em; " type="text" placeholder="Resource..."  name="query_Box" value="{{request.GET.query_Box}}">
+        <input class="btnBuscador" type="submit" value="Search">
+
+    </form>
+</div>  
+{% endblock search_bar %} 
+
+{% block query_results %}
+    <section class="page-section clearfix">
+        <h2 class="page-section">
+            <div class="container">
+    
+                {% if resource_Results %}
+    
+                    <p style="color: cornsilk; font-size: .7em;">Found {{resource_Results|length}}  elements related to: <strong style="font-size: .9em;">{{query}}</strong></p>
+
+                    <table style="margin: auto;" class="resourcetable" >
+                        <thead>
+                            <tr>
+                              <th>Name</th><th>Finality</th><th>Price</th><th>Access</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for resource in resource_Results %}
+                          <tr>
+                            <td>
+                              <a href="{% url 'ResourceTemplate' resource.idresources %}"class="linksTables">
+                                {{resource.name}}
+                              </a>
+                            </td>
+                            <td>{{resource.finality}}</td>
+                            <td>{{resource.price}}</td>
+                            <td>{{resource.access}}</td>
+                          </tr>
+                        {% endfor %}  
+                      </tbody>
+                    </table>
+                    
+                {% else %}
+    
+                    <p>No related item found</p>
+    
+                {% endif %}
+            </div>
+        </h2>    
+    </section>    
+
+{% endblock query_results %}  

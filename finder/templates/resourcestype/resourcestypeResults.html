@@ -1,0 +1,53 @@
+
+{% extends "finder/browser.html" %}
+
+{% load static %}
+
+{% block search_bar %}
+<div class="container" >
+    <form  method="GET" >
+
+        <input class="searchbox" style="width: 30em; margin-top: 2em; " type="text" placeholder="Resource type..."  name="query_Box" value="{{request.GET.query_Box}}">
+        <input class="btnBuscador" type="submit" value="Search">
+
+    </form>
+</div>  
+{% endblock search_bar %} 
+
+{% block query_results %}
+    <section class="page-section clearfix">
+        <h2 class="page-section">
+            <div class="container">
+    
+                {% if resourcestypeDB %}
+    
+                    <p style="color: cornsilk; font-size: .7em;">Found {{resourcestypeDB|length}}  elements related to: <strong style="font-size: .9em;">{{query}}</strong></p>
+
+                    <table style="margin: auto;">
+                      <thead>
+                          <tr>
+                            <th>Type</th><th>Description</th>
+                          </tr>
+                      </thead>
+                      {% for resource in resourcestypeDB %}
+                        <tr>
+                          <td>
+                            <a href="{% url 'ResourcestypesTemplate' resource.idtype %}"class="linksTables">
+                              {{resource.Type}}
+                            </a>
+                          </td>
+                          <td>{{resource.description}}</td>
+                        </tr>
+                      {% endfor %}  
+                  </table>
+                    
+                {% else %}
+    
+                    <p>No related item found</p>
+    
+                {% endif %}
+            </div>
+        </h2>    
+    </section>    
+
+{% endblock query_results %}  

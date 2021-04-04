@@ -1,11 +1,8 @@
-
-{% extends "rareDiseasesWebApp/base.html" %}
+{% extends "finder/browser.html" %}
 
 {% load static %}
 
-{% block content %}
-
-    {% block search_bar %}
+{% block search_bar %}
         <div class="box">
             <form action="results/" method="GET">
         
@@ -13,8 +10,4 @@
                 <input class="botonBuscador" type="submit" value="Find ">
             </form>
         </div>  
-    {% endblock search_bar %}   
-    {% block query_results %} 
-    {% endblock query_results %}
-
-{% endblock %}
+{% endblock search_bar %} 

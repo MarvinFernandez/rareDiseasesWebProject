@@ -16,6 +16,8 @@ class Diseases(models.Model):
     treatment = models.CharField(db_column='Treatment', max_length=100, blank=True, null=True)  # Field name made lowercase.
     diagnosis = models.TextField(db_column='Diagnosis', blank=True, null=True)  # Field name made lowercase.
     description = models.TextField(db_column='Description', blank=True, null=True)  # Field name made lowercase.
+    #created=models.DateTimeField(auto_now_add=True)
+    #updated=models.DateTimeField(auto_now_add=True)
 
     class Meta:
         managed = False
@@ -29,6 +31,8 @@ class Resourcestype(models.Model):
     idtype = models.IntegerField(db_column='idType', primary_key=True)  # Field name made lowercase.
     Type = models.CharField(db_column='Type', max_length=40, blank=True, null=True)  # Field name made lowercase.
     description = models.TextField(db_column='Description', blank=True, null=True)  # Field name made lowercase.
+    #created=models.DateTimeField(auto_now_add=True)
+    #updated=models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return 'Type: %s, idtype: %s' %(self.Type, self.idtype)
@@ -44,6 +48,8 @@ class Url(models.Model):
     language = models.CharField(db_column='Language', max_length=15, blank=True, null=True)  # Field name made lowercase.
     address = models.CharField(db_column='Address', max_length=300, blank=True, null=True)  # Field name made lowercase.
     location = models.CharField(db_column='Location', max_length=60, blank=True, null=True)  # Field name made lowercase.
+    #created=models.DateTimeField(auto_now_add=True)
+    #updated=models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return 'ID: %s, Language: %s, Address: %s, Location: %s' %(self.idurl, self.language, self.address, self.location)
@@ -65,6 +71,8 @@ class Resources(models.Model):
     resources_diseases = models.ManyToManyField(Diseases, through='ResourcesDiseases')
     resources_resourcestype = models.ManyToManyField(Resourcestype, through='ResourcesResourcestype')
     resources_url = models.ManyToManyField(Url, through='ResourcesUrl')
+    #created=models.DateTimeField(auto_now_add=True)
+    #updated=models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return 'Name: %s, Finality: %s, Price: %s, Access: %s' %(self.name, self.finality, self.price, self.access)
