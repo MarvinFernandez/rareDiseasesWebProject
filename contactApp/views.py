@@ -9,19 +9,19 @@ from django.core.mail import EmailMessage
 
 def Contacto(request):
 
-    formuario_contato=FormularioContacto()
+    formulario_contato=FormularioContacto()
 
     if request.method=="POST":
-        formuario_contato=FormularioContacto(data=request.POST)
-        if formuario_contato.is_valid():
+        formulario_contato=FormularioContacto(data=request.POST)
+        if formulario_contato.is_valid():
             name=request.POST.get("name")
             email=request.POST.get("email")
             content=request.POST.get("content")
 
 
-            email = EmailMessage("Rare Diseases web project django",#Asunto
+            email = EmailMessage("Rare Diseases web project Django",#Asunto
             "El usuario con nombre {} con la dirección {} escribe lo siguiente:\n\n {}".format(name,email,content),
-            "",["marvinchutacabras@gmail.com"],reply_to=[email])
+            "",["rdiseaseswebproject@gmail.com"],reply_to=[email])
 
             try:
                 email.send() 
@@ -30,4 +30,4 @@ def Contacto(request):
             except:
                 return redirect("/contact/?nonvalid")
 
-    return render(request, "contacto/contacto.html", {'miformulario': formuario_contato})
+    return render(request, "contacto/contacto.html", {'miformulario': formulario_contato})

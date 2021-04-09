@@ -1,0 +1,68 @@
+{% extends "rareDiseasesWebApp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+    <!-- Description -->
+    <section class="page-section cta">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-9 mx-auto">
+                    <div class="cta-inner text-center rounded">
+                        <h2 class="section-heading mb-4">
+                            <span class="section-heading-lower">{{resource.name}}</span>
+                        </h2>
+                        <p class="mb-0">{{resourcestype.0.Type}}</p>
+                        
+                        <div style="text-align: center; font-size: 0.8em; padding-top: 1em;">
+                           
+                            <span style="font-size: 1.1em;">Finality</span> : {{resource.finality}} &nbsp;&nbsp;
+                            <span style="font-size: 1.1em;">Price</span> : {{resource.price}} &nbsp;&nbsp;
+                            <span style="font-size: 1.1em;">Access</span> : {{resource.access}} 
+            
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div style="width: 75%; margin: auto; text-align: left; color: white;">
+        {{urlsobjets|length}} resources found 
+    </div>
+
+
+    <!-- Resources -->
+    {% for url in urlsobjets %}
+
+        <section class="page-section clearfix">
+            
+            <div class="container">
+                <div class="intro">
+                
+                    <h2 class="section-heading mb-4" >
+                        <a href="{{url.address}}"class="linksTables">
+                            <span class="section-heading-upper" style="font-size: 0.8em; color: white;">
+                                {{url.address}}
+                            </span>
+                        </a>
+                        <span class="section-heading-lower" style="font-size: 0.5em"></span>
+                    </h2>
+                
+                    <div style="text-align: left">
+                        
+                        <li>Lenguage : {{url.language}}</li>
+                        <li>Location : {{url.location}}</li>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+    {% endfor %}
+
+{% endblock %}

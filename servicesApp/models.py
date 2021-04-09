@@ -48,7 +48,7 @@ class Url(models.Model):
     language = models.CharField(db_column='Language', max_length=15, blank=True, null=True)  # Field name made lowercase.
     address = models.CharField(db_column='Address', max_length=300, blank=True, null=True)  # Field name made lowercase.
     location = models.CharField(db_column='Location', max_length=60, blank=True, null=True)  # Field name made lowercase.
-    #created=models.DateTimeField(auto_now_add=True)
+    #created = models.DateTimeField(auto_now_add=True)
     #updated=models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -70,6 +70,7 @@ class Resources(models.Model):
     access = models.CharField(db_column='Access', max_length=7, blank=True, null=True)  # Field name made lowercase.
     resources_diseases = models.ManyToManyField(Diseases, through='ResourcesDiseases')
     resources_resourcestype = models.ManyToManyField(Resourcestype, through='ResourcesResourcestype')
+    #resources_resourcestype = models.ManyToManyField(Resourcestype)
     resources_url = models.ManyToManyField(Url, through='ResourcesUrl')
     #created=models.DateTimeField(auto_now_add=True)
     #updated=models.DateTimeField(auto_now_add=True)
