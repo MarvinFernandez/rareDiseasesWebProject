@@ -9,7 +9,8 @@ from django.db import models
 
 
 class Diseases(models.Model):
-    iddisease = models.IntegerField(db_column='idDisease', primary_key=True)  # Field name made lowercase.
+    #iddisease = models.AutoField(db_column='idDisease',primary_key=True, default=1001 )  # Field name made lowercase. auto_created=True, 
+    iddisease = models.AutoField(db_column='idDisease',primary_key=True, default=1001)
     diseasename = models.CharField(db_column='diseaseName', max_length=200, blank=True, null=True)  # Field name made lowercase.
     prevalence = models.CharField(db_column='Prevalence', max_length=30, blank=True, null=True)  # Field name made lowercase.
     affectedsystem = models.CharField(db_column='AffectedSystem', max_length=30, blank=True, null=True)  # Field name made lowercase.
@@ -28,7 +29,7 @@ class Diseases(models.Model):
 
 
 class Resourcestype(models.Model):
-    idtype = models.IntegerField(db_column='idType', primary_key=True)  # Field name made lowercase.
+    idtype = models.AutoField(db_column='idType', primary_key=True)  # Field name made lowercase.
     Type = models.CharField(db_column='Type', max_length=40, blank=True, null=True)  # Field name made lowercase.
     description = models.TextField(db_column='Description', blank=True, null=True)  # Field name made lowercase.
     #created=models.DateTimeField(auto_now_add=True)
@@ -43,9 +44,14 @@ class Resourcestype(models.Model):
 
 
 class Url(models.Model):
-    idurl = models.IntegerField(db_column='idURL', primary_key=True)  # Field name made lowercase.
-    #language = EnumField(db_column='Language', values=('English','Spanish','Spanish/English','Others'))
-    language = models.CharField(db_column='Language', max_length=15, blank=True, null=True)  # Field name made lowercase.
+    LENGUAGE=(
+        ('English','English'),
+        ('Spanish','Spanish'),
+        ('Spanish/English','Spanish/English'),
+        ('Others','Others')
+    )
+    idurl = models.AutoField(db_column='idURL', primary_key=True, editable=False)  # Field name made lowercase.
+    language = models.CharField(db_column='Language', max_length=15, blank=True, null=True, choices=LENGUAGE)  # Field name made lowercase.
     address = models.CharField(db_column='Address', max_length=300, blank=True, null=True)  # Field name made lowercase.
     location = models.CharField(db_column='Location', max_length=60, blank=True, null=True)  # Field name made lowercase.
     #created = models.DateTimeField(auto_now_add=True)
@@ -60,17 +66,27 @@ class Url(models.Model):
 
 
 class Resources(models.Model):
-    idresources = models.IntegerField(db_column='IdResources', primary_key=True)  # Field name made lowercase.
+    FINALITY=(
+        ('Academic','Academic'),
+        ('Informative','Informative'),
+        ('Academic/Informative','Academic/Informative')
+    )
+    PRICE=(
+        ('Free','Free'),
+        ('Paid','Paid')
+    )
+    ACCESS=(
+        ('Public','Public'),
+        ('Private','Private')
+    )
+
+    idresources = models.AutoField(db_column='IdResources', primary_key=True, editable=False)  # Field name made lowercase.
     name = models.CharField(db_column='Name', max_length=100, blank=True, null=True)  # Field name made lowercase.
-    #finality = EnumField(db_column='Finality', values=('Academic','Informative','Academic/Informative'))
-    #price = EnumField(db_column='Price', values=('Free','Paid'))
-    #access = EnumField(db_column='Access', values=('Public','Private'))
-    finality = models.CharField(db_column='Finality', max_length=20, blank=True, null=True)  # Field name made lowercase.
-    price = models.CharField(db_column='Price', max_length=4, blank=True, null=True)  # Field name made lowercase.
-    access = models.CharField(db_column='Access', max_length=7, blank=True, null=True)  # Field name made lowercase.
+    finality = models.CharField(db_column='Finality', max_length=20, blank=True, null=True, choices=FINALITY)
+    price = models.CharField(db_column='Price', max_length=4, blank=True, null=True, choices=PRICE)
+    access = models.CharField(db_column='Access', max_length=7, blank=True, null=True, choices=ACCESS)
     resources_diseases = models.ManyToManyField(Diseases, through='ResourcesDiseases')
     resources_resourcestype = models.ManyToManyField(Resourcestype, through='ResourcesResourcestype')
-    #resources_resourcestype = models.ManyToManyField(Resourcestype)
     resources_url = models.ManyToManyField(Url, through='ResourcesUrl')
     #created=models.DateTimeField(auto_now_add=True)
     #updated=models.DateTimeField(auto_now_add=True)

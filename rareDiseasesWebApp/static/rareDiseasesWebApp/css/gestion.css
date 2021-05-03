@@ -21,7 +21,6 @@ table {
   width: 80%;
 }
 table thead{
-  cursor: pointer;
   background-color: rgba(24, 64, 8);
   border-bottom: solid 0.18em black;
 }
@@ -449,6 +448,7 @@ ul.errorlist{
 }
 
 .btnBuscador:hover, .botonBuscador:hover, .btnSend:hover{
+  cursor: pointer;
   color: rgb(42, 87, 24);
   font-weight: 100;
 }
@@ -457,3 +457,24 @@ ul.errorlist{
   background-color: cornsilk;
   border: cornsilk;
 }
+
+.btnHeader{
+  background-color: rgba(24, 64, 8);
+  font-weight: 800;
+  padding: 0.8em;
+  color:cornsilk;
+  border-width: 0px;
+}
+.btnHeader:hover{
+  cursor: pointer;
+  color: cornsilk;
+  font-weight: 100;
+}
+.btnHeader:active{
+  color:cornsilk;
+  background-color: rgba(24, 64, 8);
+  border: solid rgba(24, 64, 8);
+  font-weight: 800;
+}
+
+

@@ -20,7 +20,7 @@ def Contacto(request):
 
 
             email = EmailMessage("Rare Diseases web project Django",#Asunto
-            "El usuario con nombre {} con la dirección {} escribe lo siguiente:\n\n {}".format(name,email,content),
+            "The named user {} with the address {} write the following:\n\n {}".format(name,email,content),
             "",["rdiseaseswebproject@gmail.com"],reply_to=[email])
 
             try:

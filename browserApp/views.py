@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.shortcuts import redirect
 from django.db.models import Q
 from servicesApp.models import * #importa las tablas de la base de datos creada especificada en el archivo models de servicesApp
 # Create your views here.
