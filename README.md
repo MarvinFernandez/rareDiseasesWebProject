@@ -10,3 +10,5 @@ a communication mechanism was created between users and the administrator of the
 
 Future lines of this project could be adding and updating information, improve the design of the web page, and create a user registration system that allows managing the
 different levels of access, such as creating a post or making CRUD on the RDs database.
+
+![]()
