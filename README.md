@@ -12,3 +12,4 @@ Future lines of this project could be adding and updating information, improve t
 different levels of access, such as creating a post or making CRUD on the RDs database.
 
 ![](https://github.com/MarvinFernandez/rareDiseasesWebProject/blob/main/Demo.gif)
+![](https://github.com/MarvinFernandez/rareDiseasesWebProject/blob/main/Demo2.gif)
